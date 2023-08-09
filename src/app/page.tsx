@@ -1,7 +1,7 @@
 'use client'
 import { Container, Typography, useTheme } from '@mui/material'
 
-export default function () {
+const Landing = () => {
 	const theme = useTheme()
 	return (
 		<Container
@@ -46,3 +46,5 @@ export default function () {
 		</Container>
 	)
 }
+
+export default Landing
