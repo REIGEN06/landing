@@ -44,25 +44,25 @@ let theme = createTheme({
 		},
 	},
 	typography: {
-		fontFamily: 'Roboto',
+		fontFamily: 'Roboto, sans-serif',
 		body1: {
 			fontWeight: 400,
 		},
 		regular: {
 			fontWeight: 400,
-			fontFamily: 'Roboto',
+			fontFamily: 'Roboto, sans-serif',
 			lineHeight: 1.5,
 			fontSize: '1rem',
 		},
 		medium: {
 			fontWeight: 500,
-			fontFamily: 'Roboto',
+			fontFamily: 'Roboto, sans-serif',
 			lineHeight: 1.5,
 			fontSize: '1rem',
 		},
 		bold: {
 			fontWeight: 700,
-			fontFamily: 'Roboto',
+			fontFamily: 'Roboto, sans-serif',
 			lineHeight: 1.5,
 			fontSize: '1rem',
 		},
