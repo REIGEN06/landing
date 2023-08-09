@@ -5,9 +5,26 @@ declare module '@mui/material/styles' {
 	interface Palette {
 		border: Palette['primary']
 	}
-
 	interface PaletteOptions {
 		border?: PaletteOptions['primary']
+	}
+	interface TypographyVariants {
+		regular: React.CSSProperties
+		medium: React.CSSProperties
+		bold: React.CSSProperties
+	}
+	interface TypographyVariantsOptions {
+		regular: React.CSSProperties
+		medium: React.CSSProperties
+		bold: React.CSSProperties
+	}
+}
+
+declare module '@mui/material/Typography' {
+	interface TypographyPropsVariantOverrides {
+		regular: true
+		medium: true
+		bold: true
 	}
 }
 
@@ -28,12 +45,38 @@ let theme = createTheme({
 		},
 	},
 	typography: {
-		fontFamily: ['Roboto', 'Verdana', 'sans-serif'].join(','),
+		fontFamily: 'Roboto',
 		body1: {
 			fontWeight: 400,
 		},
-		body2: {
+		regular: {
+			fontWeight: 400,
+			fontFamily: 'Roboto',
+			lineHeight: 1.5,
+			fontSize: '1rem',
+		},
+		medium: {
+			fontWeight: 500,
+			fontFamily: 'Roboto',
+			lineHeight: 1.5,
+			fontSize: '1rem',
+		},
+		bold: {
 			fontWeight: 700,
+			fontFamily: 'Roboto',
+			lineHeight: 1.5,
+			fontSize: '1rem',
+		},
+	},
+	components: {
+		MuiTypography: {
+			defaultProps: {
+				variantMapping: {
+					regular: 'p',
+					medium: 'p',
+					bold: 'p',
+				},
+			},
 		},
 	},
 })

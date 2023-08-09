@@ -40,7 +40,9 @@ export default function () {
 				<Typography variant="h5">Landing Page</Typography>
 			</Container>
 			<Typography>Regular</Typography>
-			<Typography variant="body2">Bold</Typography>
+			<Typography variant="regular">Regular too</Typography>
+			<Typography variant="medium">Medium</Typography>
+			<Typography variant="bold">Bold</Typography>
 		</Container>
 	)
 }
