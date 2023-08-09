@@ -28,7 +28,13 @@ let theme = createTheme({
 		},
 	},
 	typography: {
-		fontFamily: ['sans-serif', 'Verdana', 'Roboto'].join(','),
+		fontFamily: ['Roboto', 'Verdana', 'sans-serif'].join(','),
+		body1: {
+			fontWeight: 400,
+		},
+		body2: {
+			fontWeight: 700,
+		},
 	},
 })
 

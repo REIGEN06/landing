@@ -39,6 +39,8 @@ export default function () {
 			>
 				<Typography variant="h5">Landing Page</Typography>
 			</Container>
+			<Typography>Regular</Typography>
+			<Typography variant="body2">Bold</Typography>
 		</Container>
 	)
 }
