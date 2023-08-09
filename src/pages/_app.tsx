@@ -1,11 +1,12 @@
 import type { AppProps } from 'next/app'
 import React from 'react'
-import Theme from './theme/theme'
+import theme from '../theme/theme'
+import { ThemeProvider } from '@mui/material'
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<Theme>
+		<ThemeProvider theme={theme}>
 			<Component {...pageProps} />
-		</Theme>
+		</ThemeProvider>
 	)
 }
