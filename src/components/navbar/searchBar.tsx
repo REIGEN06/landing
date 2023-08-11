@@ -1,10 +1,8 @@
 import {
-	Box,
 	Button,
 	Grid,
 	InputAdornment,
 	MenuItem,
-	Stack,
 	TextField,
 	useTheme,
 } from '@mui/material'
@@ -77,6 +75,7 @@ const SearchBar = () => {
 						}}
 					/>
 				</Grid>
+
 				<Grid item xs={12} md={3}>
 					<TextField
 						fullWidth
@@ -98,6 +97,7 @@ const SearchBar = () => {
 					</TextField>
 				</Grid>
 			</Grid>
+
 			<SearchButton fullWidth variant="contained">
 				Поиск
 			</SearchButton>
