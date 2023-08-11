@@ -1,13 +1,14 @@
 import type { AppProps } from 'next/app'
 import React from 'react'
-import Theme from '../theme/theme'
-import NavBar from '../components/navbar'
+import theme from '../theme/theme'
+import { ThemeProvider } from '@mui/material'
+import NavBar from '@/components/navbar'
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<Theme>
+		<ThemeProvider theme={theme}>
 			<NavBar />
-			{/* <Component {...pageProps} /> */}
-		</Theme>
+			<Component {...pageProps} />
+		</ThemeProvider>
 	)
 }
