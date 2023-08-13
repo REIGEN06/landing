@@ -22,7 +22,7 @@ const Medicine = () => {
 						</StyledButton>
 					</Grid>
 					<Grid item xs={12} md={4}>
-						<StyledButton fullWidth>
+						<StyledButton fullWidth outlined>
 							<Typography variant="medium" sx={{ fontSize: '20px' }}>
 								Подробнее
 							</Typography>
