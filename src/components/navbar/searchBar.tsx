@@ -9,6 +9,7 @@ import {
 } from '@mui/material'
 import { Theme, styled } from '@mui/material/styles'
 import SearchNavbarIcon from '../../assets/icons/navbarIcons/SearchNavbar.svg'
+import StyledButton from '../styledButton'
 
 const SearchBar = () => {
 	const theme = useTheme()
@@ -108,18 +109,12 @@ const SearchBar = () => {
 
 export default SearchBar
 
-const SearchButton = styled(Button)(({ theme }) => ({
+const SearchButton = styled(StyledButton)(({ theme }) => ({
 	display: 'flex',
 	height: '48px',
 	margin: '8px',
 	maxWidth: '105px',
 	padding: '16px 12px',
-	borderRadius: '0px',
-	backgroundColor: `${theme.palette.secondary.main}`,
-
-	'&:hover': {
-		backgroundColor: `${theme.palette.secondary.dark}`,
-	},
 
 	'@media (max-width: 1024px)': {
 		maxWidth: '1024px',
