@@ -49,19 +49,12 @@ const MenuButtons = () => {
 	const theme = useTheme()
 
 	return (
-		<FlexibleStack
-			sx={{
-				backgroundColor: theme.palette.primary.dark,
-			}}
-		>
+		<FlexibleStack>
 			<Grid container spacing={1}>
 				{menuNavbar.map((option) => (
 					<Grid key={option.value} item xs={12} md={2} xl={1}>
 						<NavBarButton theme={theme} value={option.value}>
-							<NavBarTypography
-								variant="medium"
-								sx={{ alignItems: 'center', gap: 1 }}
-							>
+							<NavBarTypography variant="medium">
 								{option.value === 0 && <MenuNavbarIcon />} {option.label}
 							</NavBarTypography>
 						</NavBarButton>
@@ -74,15 +67,17 @@ const MenuButtons = () => {
 
 export default MenuButtons
 
-const FlexibleStack = styled(Stack)(({ theme }: { theme: Theme }) => ({
+const FlexibleStack = styled(Stack)(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'row',
 	alignItems: 'center',
 	padding: '8px 80px',
-	backgroundColor: theme.palette.primary.light,
-	'@media (max-width: 890px)': {
+	backgroundColor: theme.palette.primary.dark,
+
+	'@media (max-width: 1024px)': {
 		flexDirection: 'column',
 		alignItems: 'center',
+		padding: '8px 40px',
 	},
 }))
 
@@ -96,4 +91,6 @@ const NavBarButton = styled(Button)(
 
 const NavBarTypography = styled(Typography)({
 	display: 'flex',
+	alignItems: 'center',
+	gap: '8px',
 })

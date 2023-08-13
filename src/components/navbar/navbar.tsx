@@ -42,18 +42,19 @@ const NavBar = () => {
 
 				{scrollY !== 0 && <SearchBar />}
 
-				<Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 3 }}>
+				<FlexEndBox>
 					<NavBarLink href="#">
 						<UserNavbarIcon />
 						<NavBarTypography variant="medium">Профиль</NavBarTypography>
 						<KeyboardArrowDownIcon />
 					</NavBarLink>
+
 					<NavBarLink href="#">
 						<ShoppingCartIcon />
 						<NavBarTypography variant="medium">Корзина</NavBarTypography>
 						<KeyboardArrowDownIcon />
 					</NavBarLink>
-				</Box>
+				</FlexEndBox>
 			</FlexibleStack>
 
 			<FlexibleStack sx={{ p: '24px 80px', gap: 3 }}>
@@ -71,29 +72,38 @@ const NavBar = () => {
 
 export default NavBar
 
-const FlexibleStack = styled(Stack)(({ theme }: { theme: Theme }) => ({
+const FlexibleStack = styled(Stack)(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'row',
 	alignItems: 'center',
 	justifyContent: 'space-between',
 	padding: '8px 80px',
 	backgroundColor: theme.palette.primary.light,
-	'@media (max-width: 890px)': {
+
+	'@media (max-width: 1024px)': {
 		flexDirection: 'column',
 		alignItems: 'center',
+		padding: '8px 40px',
 	},
 }))
+
+const FlexEndBox = styled(Box)({
+	display: 'flex',
+	justifyContent: 'flex-end',
+	gap: '24px',
+})
 
 const NavBarTypography = styled(Typography)({
 	display: 'flex',
 })
 
-const NavBarLink = styled(Link)(({ theme }: { theme: Theme }) => ({
+const NavBarLink = styled(Link)(({ theme }) => ({
 	display: 'flex',
 	alignItems: 'center',
 	textDecoration: 'none',
 	gap: '8px',
 	padding: '12px 8px',
+
 	'&:hover': {
 		backgroundColor: `${theme.palette.primary.dark}`,
 	},

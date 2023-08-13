@@ -107,7 +107,7 @@ const SearchBar = () => {
 
 export default SearchBar
 
-const SearchButton = styled(Button)(({ theme }: { theme: Theme }) => ({
+const SearchButton = styled(Button)(({ theme }) => ({
 	display: 'flex',
 	height: '48px',
 	margin: '8px',
@@ -115,10 +115,12 @@ const SearchButton = styled(Button)(({ theme }: { theme: Theme }) => ({
 	padding: '16px 12px',
 	borderRadius: '0px',
 	backgroundColor: `${theme.palette.secondary.main}`,
+
 	'&:hover': {
 		backgroundColor: `${theme.palette.secondary.dark}`,
 	},
-	'@media (max-width: 890px)': {
-		maxWidth: '890px',
+
+	'@media (max-width: 1024px)': {
+		maxWidth: '1024px',
 	},
 }))
