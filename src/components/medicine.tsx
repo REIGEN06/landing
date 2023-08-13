@@ -1,7 +1,8 @@
 import { styled } from '@mui/material/styles'
 import Stack from '@mui/material/Stack'
-import { Button, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import MedicineIcon from '../icons/medicineIcons/Medicine.svg'
+import StyledButton from './styledButton'
 
 const Medicine = () => {
 	return (
@@ -22,7 +23,7 @@ const Medicine = () => {
 						</StyledButton>
 					</Grid>
 					<Grid item xs={12} md={4}>
-						<StyledButton fullWidth outlined>
+						<StyledButton fullWidth outlined={1}>
 							<Typography variant="medium" sx={{ fontSize: '20px' }}>
 								Подробнее
 							</Typography>
@@ -72,24 +73,3 @@ const StyledMedicineIcon = styled(MedicineIcon)({
 	width: '100%',
 	height: '100%',
 })
-
-type ButtonProps = {
-	outlined?: boolean
-}
-
-const StyledButton = styled(Button)<ButtonProps>(({ theme, outlined }) => ({
-	color: outlined ? theme.palette.secondary.main : theme.palette.primary.dark,
-
-	backgroundColor: outlined
-		? theme.palette.primary.dark
-		: theme.palette.secondary.main,
-
-	border: `3px solid ${theme.palette.secondary.main}`,
-	borderRadius: 0,
-	'&:hover': {
-		backgroundColor: `${theme.palette.secondary.light}`,
-	},
-	height: '56px',
-	padding: '16px',
-	textTransform: 'none',
-}))
