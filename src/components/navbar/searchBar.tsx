@@ -4,6 +4,7 @@ import {
 	InputAdornment,
 	MenuItem,
 	TextField,
+	Typography,
 	useTheme,
 } from '@mui/material'
 import { Theme, styled } from '@mui/material/styles'
@@ -99,7 +100,7 @@ const SearchBar = () => {
 			</Grid>
 
 			<SearchButton fullWidth variant="contained">
-				Поиск
+				<Typography variant="medium">Поиск</Typography>
 			</SearchButton>
 		</>
 	)

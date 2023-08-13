@@ -86,6 +86,7 @@ const NavBarButton = styled(Button)(
 		borderRadius: '0px',
 		border: !value ? `1px solid ${theme.palette.border.main}` : 'none',
 		backgroundColor: !value ? theme.palette.primary.light : 'none',
+		textTransform: 'none',
 	})
 )
 

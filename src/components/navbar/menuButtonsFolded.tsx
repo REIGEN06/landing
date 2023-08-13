@@ -25,10 +25,10 @@ const MenuButtons = () => {
 			))}
 
 			<TextField
-				InputProps={{ disableUnderline: true }}
 				select
 				variant="standard"
 				defaultValue={menuSize}
+				InputProps={{ disableUnderline: true, style: { fontWeight: 500 } }}
 			>
 				{menuNavbar.slice(menuSize).map((option) => (
 					<MenuItem key={option.value} value={option.value}>
@@ -60,6 +60,7 @@ const NavBarButton = styled(Button)(
 		borderRadius: '0px',
 		border: !value ? `1px solid ${theme.palette.border.main}` : 'none',
 		backgroundColor: !value ? theme.palette.primary.light : 'none',
+		textTransform: 'none',
 	})
 )
 
