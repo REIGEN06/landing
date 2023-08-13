@@ -1,7 +1,12 @@
+import Medicine from '@/components/medicine'
 import React from 'react'
 
 const Landing = () => {
-	return <>Land</>
+	return (
+		<>
+			<Medicine />
+		</>
+	)
 }
 
 export default Landing
