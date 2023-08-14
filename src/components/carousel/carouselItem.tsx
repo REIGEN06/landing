@@ -53,6 +53,8 @@ const StyledCard = styled(Card)({
 	margin: '16px',
 	padding: '24px',
 	flexDirection: 'column',
+	paddingBottom: '0px',
+	height: '100%',
 })
 
 const Logo = styled(Stack)({

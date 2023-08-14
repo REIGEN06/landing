@@ -2,19 +2,20 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import { Stack, styled } from '@mui/material'
 import CarouselItem from './carouselItem'
+import { carouselArray, carouselItem } from './carouselArray'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
-import { carouselArray, carouselItem } from './carouselArray'
 
 const Carousel = () => {
 	return (
 		<StyledStack>
 			<StyledSwiper
 				modules={[Navigation]}
-				spaceBetween={10}
+				spaceBetween={0}
 				slidesPerView={1}
 				navigation
+				loop
 				breakpoints={{
 					768: {
 						slidesPerView: 2,
@@ -22,7 +23,7 @@ const Carousel = () => {
 				}}
 			>
 				{carouselArray.map((item: carouselItem) => (
-					<SwiperSlide key={item.logo}>
+					<SwiperSlide key={item.name} style={{ height: 'auto' }}>
 						<CarouselItem item={item} />
 					</SwiperSlide>
 				))}
@@ -34,7 +35,6 @@ const Carousel = () => {
 export default Carousel
 
 const StyledStack = styled(Stack)(({ theme }) => ({
-	maxWidth: '1440px',
 	background: 'linear-gradient(180deg, #67C3F3 0%, #5A98F2 100%)',
 	padding: '80px',
 
