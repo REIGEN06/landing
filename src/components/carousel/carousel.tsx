@@ -35,7 +35,7 @@ const Carousel = () => {
 export default Carousel
 
 const StyledStack = styled(Stack)(({ theme }) => ({
-	background: 'linear-gradient(180deg, #67C3F3 0%, #5A98F2 100%)',
+	background: `linear-gradient(180deg, ${theme.palette.secondary.light} 0%, ${theme.palette.secondary.dark} 100%)`,
 	padding: '80px',
 
 	'@media (max-width: 1024px)': {
