@@ -11,21 +11,22 @@ import Avatar from '@mui/material/Avatar'
 import ArtVenue from '../../icons/carouselIcons/ArtVenue.svg'
 import User from '../../icons/carouselIcons/User.svg'
 import Zoomerr from '../../icons/carouselIcons/Zoomerr.svg'
+import { carouselItem } from './carouselArray'
 
-const CarouselItem = () => {
+interface CarouselProps {
+	item: carouselItem
+}
+
+const CarouselItem = ({ item }: CarouselProps) => {
 	return (
 		<StyledCard>
 			<Logo>
-				<Zoomerr />
-				<LogoTypography variant="bold">Zoomerr</LogoTypography>
+				{item.logo === 'Zoomerr' ? <Zoomerr /> : <ArtVenue />}
+				<LogoTypography variant="bold">{item.logo}</LogoTypography>
 			</Logo>
 
 			<StyledContent>
-				<Typography sx={{ fontSize: '18px' }}>
-					Исследование гласит, что наличие хороших навыков чтения в детском
-					возрасте является предиктором высокого уровня интеллекта у молодых
-					взрослых людей.
-				</Typography>
+				<Typography sx={{ fontSize: '18px' }}>{item.content}</Typography>
 
 				<AvatarBox>
 					<StyledAvatar>
@@ -35,10 +36,10 @@ const CarouselItem = () => {
 
 				<Box>
 					<Typography variant="bold" sx={{ fontSize: '24px' }}>
-						Петров павел
+						{item.name}
 					</Typography>
 
-					<Typography sx={{ fontSize: '16px' }}>Невролог</Typography>
+					<Typography sx={{ fontSize: '16px' }}>{item.job}</Typography>
 				</Box>
 			</StyledContent>
 		</StyledCard>

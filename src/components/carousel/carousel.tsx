@@ -5,8 +5,7 @@ import CarouselItem from './carouselItem'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
+import { carouselArray, carouselItem } from './carouselArray'
 
 const Carousel = () => {
 	return (
@@ -14,25 +13,19 @@ const Carousel = () => {
 			<StyledSwiper
 				modules={[Navigation]}
 				spaceBetween={10}
-				slidesPerView={2}
+				slidesPerView={1}
 				navigation
-				loop
+				breakpoints={{
+					768: {
+						slidesPerView: 2,
+					},
+				}}
 			>
-				<SwiperSlide>
-					<CarouselItem />
-				</SwiperSlide>
-				<SwiperSlide>
-					<CarouselItem />
-				</SwiperSlide>
-				<SwiperSlide>
-					<CarouselItem />
-				</SwiperSlide>
-				<SwiperSlide>
-					<CarouselItem />
-				</SwiperSlide>
-				<SwiperSlide>
-					<CarouselItem />
-				</SwiperSlide>
+				{carouselArray.map((item: carouselItem) => (
+					<SwiperSlide key={item.logo}>
+						<CarouselItem item={item} />
+					</SwiperSlide>
+				))}
 			</StyledSwiper>
 		</StyledStack>
 	)
