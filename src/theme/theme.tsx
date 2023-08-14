@@ -3,9 +3,11 @@ import { createTheme, responsiveFontSizes } from '@mui/material'
 declare module '@mui/material/styles' {
 	interface Palette {
 		border: Palette['primary']
+		card: Palette['primary']
 	}
 	interface PaletteOptions {
 		border?: PaletteOptions['primary']
+		card?: PaletteOptions['primary']
 	}
 	interface TypographyVariants {
 		regular: React.CSSProperties
@@ -42,6 +44,9 @@ let theme = createTheme({
 		border: {
 			main: '#c1c7cd',
 		},
+		card: {
+			main: '#697077',
+		},
 	},
 	typography: {
 		fontFamily: 'Roboto, sans-serif',
@@ -64,7 +69,7 @@ let theme = createTheme({
 		bold: {
 			fontWeight: 700,
 			fontFamily: 'Roboto, sans-serif',
-			lineHeight: 1,
+			lineHeight: 1.1,
 			fontSize: '1rem',
 		},
 	},
