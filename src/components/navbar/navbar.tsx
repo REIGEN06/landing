@@ -82,8 +82,7 @@ const FlexibleStack = styled(Stack)(({ theme }) => ({
 
 	'@media (max-width: 1024px)': {
 		flexDirection: 'column',
-		alignItems: 'center',
-		padding: '8px 40px',
+		padding: '16px 20px',
 	},
 }))
 

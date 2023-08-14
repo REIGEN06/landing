@@ -52,7 +52,7 @@ const MenuButtons = () => {
 		<FlexibleStack>
 			<Grid container spacing={1}>
 				{menuNavbar.map((option) => (
-					<Grid key={option.value} item xs={12} md={2} xl={1}>
+					<Grid key={option.value} item xs={6} md={2} xl={1}>
 						<NavBarButton theme={theme} value={option.value}>
 							<NavBarTypography variant="medium">
 								{option.value === 0 && <MenuNavbarIcon />} {option.label}
@@ -76,8 +76,7 @@ const FlexibleStack = styled(Stack)(({ theme }) => ({
 
 	'@media (max-width: 1024px)': {
 		flexDirection: 'column',
-		alignItems: 'center',
-		padding: '8px 40px',
+		padding: '16px 20px',
 	},
 }))
 
