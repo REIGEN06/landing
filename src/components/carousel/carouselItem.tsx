@@ -13,20 +13,16 @@ import User from '../../icons/carouselIcons/User.svg'
 import Zoomerr from '../../icons/carouselIcons/Zoomerr.svg'
 import { carouselItem } from './carouselArray'
 
-interface CarouselProps {
-	item: carouselItem
-}
-
-const CarouselItem = ({ item }: CarouselProps) => {
+const CarouselItem = ({ logo, content, name, job }: carouselItem) => {
 	return (
 		<StyledCard>
 			<Logo>
-				{item.logo === 'Zoomerr' ? <Zoomerr /> : <ArtVenue />}
-				<LogoTypography variant="bold">{item.logo}</LogoTypography>
+				{logo === 'Zoomerr' ? <Zoomerr /> : <ArtVenue />}
+				<LogoTypography variant="bold">{logo}</LogoTypography>
 			</Logo>
 
 			<StyledContent>
-				<Typography sx={{ fontSize: '18px' }}>{item.content}</Typography>
+				<Typography sx={{ fontSize: '18px' }}>{content}</Typography>
 
 				<AvatarBox>
 					<StyledAvatar>
@@ -36,10 +32,10 @@ const CarouselItem = ({ item }: CarouselProps) => {
 
 				<Box>
 					<Typography variant="bold" sx={{ fontSize: '24px' }}>
-						{item.name}
+						{name}
 					</Typography>
 
-					<Typography sx={{ fontSize: '16px' }}>{item.job}</Typography>
+					<Typography sx={{ fontSize: '16px' }}>{job}</Typography>
 				</Box>
 			</StyledContent>
 		</StyledCard>

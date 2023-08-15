@@ -23,9 +23,9 @@ const Carousel = () => {
 				}}
 			>
 				{carouselArray.map((item: carouselItem) => (
-					<SwiperSlide key={item.name} style={{ height: 'auto' }}>
-						<CarouselItem item={item} />
-					</SwiperSlide>
+					<StyledSlide key={item.name}>
+						<CarouselItem {...item} />
+					</StyledSlide>
 				))}
 			</StyledSwiper>
 		</StyledStack>
@@ -45,4 +45,10 @@ const StyledStack = styled(Stack)(({ theme }) => ({
 
 const StyledSwiper = styled(Swiper)({
 	width: '100%',
+})
+
+const StyledSlide = styled(SwiperSlide)({
+	'&.swiper-slide': {
+		height: 'auto',
+	},
 })
