@@ -28,7 +28,10 @@ const MenuButtons = () => {
 				select
 				variant="standard"
 				defaultValue={menuSize}
-				InputProps={{ disableUnderline: true, style: { fontWeight: 500 } }}
+				InputProps={{ disableUnderline: true }}
+				sx={{
+					'.MuiInputBase-input': { fontWeight: 500 },
+				}}
 			>
 				{menuNavbar.slice(menuSize).map((option) => (
 					<MenuItem key={option.value} value={option.value}>
