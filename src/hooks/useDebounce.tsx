@@ -1,11 +1,11 @@
 import { useRef } from 'react'
 
-const useDebounce = (func: any, delay: number) => {
+const useDebounce = (func: () => void, delay: number) => {
 	const ref = useRef<null | number>(null)
 
-	return (...args: any[]) => {
+	return () => {
 		ref.current && clearTimeout(ref.current)
-		ref.current = window.setTimeout(() => func(...args), delay)
+		ref.current = window.setTimeout(() => func(), delay)
 	}
 }
 

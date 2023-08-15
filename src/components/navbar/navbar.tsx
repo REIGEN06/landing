@@ -8,7 +8,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import NavBarLogo from '../../assets/icons/navbarIcons/NavbarLogo.svg'
 import SearchBar from './searchBar'
 import MenuButtons from './menuButtons'
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import useDebounce from '@/hooks/useDebounce'
 import MenuButtonsFolded from './menuButtonsFolded'
 
@@ -16,10 +16,8 @@ const NavBar = () => {
 	const theme = useTheme()
 
 	const [scrollY, setScrollY] = useState(0)
-	const onScroll = useCallback((event: any) => {
-		setScrollY(window.scrollY)
-	}, [])
-	const debounceScroll = useDebounce(onScroll, 300)
+
+	const debounceScroll = useDebounce(() => setScrollY(window.scrollY), 300)
 
 	useEffect(() => {
 		window.addEventListener('scroll', debounceScroll, true)
