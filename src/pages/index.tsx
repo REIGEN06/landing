@@ -1,7 +1,8 @@
 import React from 'react'
+import Articles from './components/articles/articles'
 
 const Landing = () => {
-	return <>Land</>
+	return <Articles />
 }
 
 export default Landing
