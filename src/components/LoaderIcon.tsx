@@ -1,5 +1,5 @@
 import { styled } from '@mui/material'
-import TIcon from '../../assets/icons/t.svg'
+import TIcon from '../assets/icons/t.svg'
 
 export function LoaderIcon() {
 	return (

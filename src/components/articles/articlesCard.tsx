@@ -8,7 +8,7 @@ import {
 	styled,
 } from '@mui/material'
 import React from 'react'
-import ArrowIcon from '../../../assets/icons/arrow.svg'
+import ArrowIcon from '../../assets/icons/arrow.svg'
 import { StaticImageData } from 'next/image'
 import { LoaderIcon } from '../LoaderIcon'
 

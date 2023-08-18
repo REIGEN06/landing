@@ -2,9 +2,9 @@ import { Stack, Typography, styled } from '@mui/material'
 import React from 'react'
 import StyledButton from '../styledButton'
 import ArticlesCard from './articlesCard'
-import Headaches from '../../../assets/images/headachesjpg.jpg'
-import Medicine from '../../../assets/images/medicine.jpg'
-import Antidepressants from '../../../assets/images/antidepressants.jpg'
+import Headaches from '../../assets/images/headachesjpg.jpg'
+import Medicine from '../../assets/images/medicine.jpg'
+import Antidepressants from '../../assets/images/antidepressants.jpg'
 import { StaticImageData } from 'next/image'
 
 type ArticlesList = {
