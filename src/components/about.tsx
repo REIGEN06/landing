@@ -1,12 +1,35 @@
-import { Box, Link, Stack, Typography, styled, useTheme } from '@mui/material'
-import React from 'react'
+import { Stack, Typography, styled } from '@mui/material'
+import React, { ReactNode } from 'react'
 import Consultation from '../assets/icons/consultation.svg'
-import ArrowIcon from '../assets/icons/arrow.svg'
 import TestIcon from '../assets/icons/test.svg'
 import KitIcon from '../assets/icons/kit.svg'
+import AboutCard from './aboutCard'
+
+export type Card = {
+	icon: ReactNode
+	title: string
+	description: string
+}
+
+const cards: Card[] = [
+	{
+		icon: <Consultation />,
+		title: 'Консультация',
+		description: 'На нашем форуме вы найдете ответы на вопросы',
+	},
+	{
+		icon: <TestIcon />,
+		title: 'Тесты',
+		description: 'Вы можете пройти тесты на нашем сайте',
+	},
+	{
+		icon: <KitIcon />,
+		title: 'Поиск клиники',
+		description: 'Мы поможем найти Вам ближайшую поликлинику',
+	},
+]
 
 export default function About() {
-	const theme = useTheme()
 	return (
 		<FlexibleStack>
 			<Info>
@@ -17,96 +40,9 @@ export default function About() {
 				</Typography>
 			</Info>
 			<Cards direction="row">
-				<Card>
-					<Consultation />
-					<Typography variant="bold" sx={{ margin: '24px 0 16px 0' }}>
-						Консультация
-					</Typography>
-					<Typography
-						variant="regular"
-						sx={{ marginBottom: '32px', maxWidth: '240px' }}
-					>
-						На нашем форуме вы найдете ответы на вопросы
-					</Typography>
-					<Link
-						href="#"
-						sx={{
-							textDecoration: 'none',
-							display: 'flex',
-							alignItems: 'center',
-						}}
-					>
-						<Typography
-							sx={{
-								color: `${theme.palette.secondary.main}`,
-								marginRight: '13px',
-							}}
-						>
-							Узнать больше
-						</Typography>
-						<ArrowIcon />
-					</Link>
-				</Card>
-				<Card>
-					<TestIcon />
-					<Typography variant="bold" sx={{ margin: '24px 0 16px 0' }}>
-						Тесты
-					</Typography>
-					<Typography
-						variant="regular"
-						sx={{ marginBottom: '32px', maxWidth: '240px' }}
-					>
-						Вы можете пройти тесты на нашем сайте
-					</Typography>
-					<Link
-						href="#"
-						sx={{
-							textDecoration: 'none',
-							display: 'flex',
-							alignItems: 'center',
-						}}
-					>
-						<Typography
-							sx={{
-								color: `${theme.palette.secondary.main}`,
-								marginRight: '13px',
-							}}
-						>
-							Узнать больше
-						</Typography>
-						<ArrowIcon />
-					</Link>
-				</Card>
-				<Card>
-					<KitIcon />
-					<Typography variant="bold" sx={{ margin: '24px 0 16px 0' }}>
-						Поиск клиники
-					</Typography>
-					<Typography
-						variant="regular"
-						sx={{ marginBottom: '32px', maxWidth: '240px' }}
-					>
-						Мы поможем найти Вам ближайшую поликлинику
-					</Typography>
-					<Link
-						href="#"
-						sx={{
-							textDecoration: 'none',
-							display: 'flex',
-							alignItems: 'center',
-						}}
-					>
-						<Typography
-							sx={{
-								color: `${theme.palette.secondary.main}`,
-								marginRight: '13px',
-							}}
-						>
-							Узнать больше
-						</Typography>
-						<ArrowIcon />
-					</Link>
-				</Card>
+				{cards.map((card) => (
+					<AboutCard key={card.title} {...card} />
+				))}
 			</Cards>
 		</FlexibleStack>
 	)
@@ -139,14 +75,6 @@ const FlexibleStack = styled('section')`
 		flex-direction: column;
 		align-items: center;
 	}
-`
-
-const Card = styled(Box)`
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	max-width: 240px;
-	padding: 0 16px 16px 16px;
 `
 
 const Cards = styled(Stack)`
