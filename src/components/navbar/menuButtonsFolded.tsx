@@ -8,7 +8,7 @@ import {
 } from '@mui/material'
 import { Theme, styled } from '@mui/material/styles'
 import MenuNavbarIcon from '../../assets/icons/navbarIcons/MenuNavbar.svg'
-import { menuNavbar } from './menuButtons'
+import { menuNavbar } from './MenuButtons'
 
 const MenuButtons = () => {
 	const theme = useTheme()
@@ -49,7 +49,7 @@ const FlexibleStack = styled(Stack)(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'row',
 	alignItems: 'center',
-	gap: '8px',
+	gap: theme.spacing(1),
 	backgroundColor: theme.palette.primary.light,
 
 	'@media (max-width: 768px)': {
@@ -66,8 +66,8 @@ const NavBarButton = styled(Button)(
 	})
 )
 
-const NavBarTypography = styled(Typography)({
+const NavBarTypography = styled(Typography)(({ theme }) => ({
 	display: 'flex',
 	alignItems: 'center',
-	gap: '8px',
-})
+	gap: theme.spacing(1),
+}))

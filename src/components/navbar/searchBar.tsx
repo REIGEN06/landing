@@ -1,5 +1,4 @@
 import {
-	Button,
 	Grid,
 	InputAdornment,
 	MenuItem,
@@ -7,9 +6,9 @@ import {
 	Typography,
 	useTheme,
 } from '@mui/material'
-import { Theme, styled } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import SearchNavbarIcon from '../../assets/icons/navbarIcons/SearchNavbar.svg'
-import StyledButton from '../styledButton'
+import StyledButton from '../StyledButton'
 
 const SearchBar = () => {
 	const theme = useTheme()
@@ -64,7 +63,7 @@ const SearchBar = () => {
 						InputProps={{
 							sx: {
 								borderRadius: 0,
-								height: '48px',
+								height: 48,
 							},
 							startAdornment: (
 								<InputAdornment position="start">
@@ -85,7 +84,7 @@ const SearchBar = () => {
 						variant="outlined"
 						defaultValue="0"
 						InputProps={{
-							sx: { borderRadius: 0, height: '48px' },
+							sx: { borderRadius: 0, height: 48 },
 						}}
 						sx={{
 							backgroundColor: theme.palette.primary.dark,
@@ -111,10 +110,10 @@ export default SearchBar
 
 const SearchButton = styled(StyledButton)(({ theme }) => ({
 	display: 'flex',
-	height: '48px',
-	margin: '8px',
+	height: theme.spacing(6),
+	margin: theme.spacing(1),
+	padding: theme.spacing(2, 1.5),
 	maxWidth: '105px',
-	padding: '16px 12px',
 
 	'@media (max-width: 1024px)': {
 		maxWidth: '1024px',

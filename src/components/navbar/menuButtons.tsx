@@ -71,12 +71,12 @@ const FlexibleStack = styled(Stack)(({ theme }) => ({
 	display: 'flex',
 	flexDirection: 'row',
 	alignItems: 'center',
-	padding: '8px 80px',
+	padding: theme.spacing(1, 10),
 	backgroundColor: theme.palette.primary.dark,
 
 	'@media (max-width: 1024px)': {
 		flexDirection: 'column',
-		padding: '16px 20px',
+		padding: theme.spacing(2, 2.5),
 	},
 }))
 
@@ -89,8 +89,8 @@ const NavBarButton = styled(Button)(
 	})
 )
 
-const NavBarTypography = styled(Typography)({
+const NavBarTypography = styled(Typography)(({ theme }) => ({
 	display: 'flex',
 	alignItems: 'center',
-	gap: '8px',
-})
+	gap: theme.spacing(1),
+}))

@@ -6,11 +6,11 @@ import ShoppingCartIcon from '../../assets/icons/navbarIcons/ShoppingCart.svg'
 import UserNavbarIcon from '../../assets/icons/navbarIcons/UserNavbar.svg'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import NavBarLogo from '../../assets/icons/navbarIcons/NavbarLogo.svg'
-import SearchBar from './searchBar'
-import MenuButtons from './menuButtons'
+import SearchBar from './SearchBar'
+import MenuButtons from './MenuButtons'
 import { useEffect, useState } from 'react'
 import useDebounce from '@/hooks/useDebounce'
-import MenuButtonsFolded from './menuButtonsFolded'
+import MenuButtonsFolded from './MenuButtonsFolded'
 
 const NavBar = () => {
 	const theme = useTheme()
@@ -55,7 +55,7 @@ const NavBar = () => {
 				</FlexEndBox>
 			</FlexibleStack>
 
-			<FlexibleStack sx={{ p: '24px 80px', gap: 3 }}>
+			<FlexibleStack sx={{ p: theme.spacing(3, 10), gap: theme.spacing(3) }}>
 				<Link href="#">
 					<NavBarLogo />
 				</Link>
@@ -75,20 +75,20 @@ const FlexibleStack = styled(Stack)(({ theme }) => ({
 	flexDirection: 'row',
 	alignItems: 'center',
 	justifyContent: 'space-between',
-	padding: '8px 80px',
+	padding: theme.spacing(1, 10),
 	backgroundColor: theme.palette.primary.light,
 
 	'@media (max-width: 1024px)': {
 		flexDirection: 'column',
-		padding: '16px 20px',
+		padding: theme.spacing(2, 2.5),
 	},
 }))
 
-const FlexEndBox = styled(Box)({
+const FlexEndBox = styled(Box)(({ theme }) => ({
 	display: 'flex',
 	justifyContent: 'flex-end',
-	gap: '24px',
-})
+	gap: theme.spacing(3),
+}))
 
 const NavBarTypography = styled(Typography)({
 	display: 'flex',
@@ -98,8 +98,8 @@ const NavBarLink = styled(Link)(({ theme }) => ({
 	display: 'flex',
 	alignItems: 'center',
 	textDecoration: 'none',
-	gap: '8px',
-	padding: '12px 8px',
+	gap: theme.spacing(1),
+	padding: theme.spacing(1.5, 1),
 
 	'&:hover': {
 		backgroundColor: `${theme.palette.primary.dark}`,

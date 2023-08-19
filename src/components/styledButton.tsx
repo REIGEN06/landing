@@ -13,8 +13,8 @@ const StyledButton = styled(Button)<ButtonProps>(({ theme, outlined }) => ({
 
 	border: `3px solid ${theme.palette.secondary.main}`,
 	borderRadius: 0,
-	height: '56px',
-	padding: '16px',
+	height: theme.spacing(7),
+	padding: theme.spacing(2),
 	textTransform: 'none',
 
 	'&:hover': {
