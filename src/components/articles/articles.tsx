@@ -68,18 +68,18 @@ const Section = styled('section')`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 80px 0;
+	padding: ${({ theme }) => theme.spacing(10, 0)};
 `
 
 const Subtitle = styled(Typography)`
-	color: #001d6c;
+	color: ${({ theme }) => theme.palette.subtitle.main};
 	font-size: 20px;
-	margin-bottom: 8px;
+	margin-bottom: ${({ theme }) => theme.spacing(1)};
 `
 
 const Title = styled(Typography)`
 	font-size: 42px;
-	margin-bottom: 64px;
+	margin-bottom: ${({ theme }) => theme.spacing(8)};
 	text-align: center;
 
 	@media (max-width: 1300px) {
@@ -97,13 +97,13 @@ const Cards = styled(Stack)`
 
 	@media (max-width: 1300px) {
 		grid-template-columns: 1fr 1fr;
-		row-gap: 16px;
+		row-gap: ${({ theme }) => theme.spacing(2)};
 	}
 
 	@media (max-width: 650px) {
 		grid-template-columns: 1fr;
 	}
 
-	column-gap: 16px;
-	margin-bottom: 64px;
+	column-gap: ${({ theme }) => theme.spacing(2)};
+	margin-bottom: ${({ theme }) => theme.spacing(8)};
 `

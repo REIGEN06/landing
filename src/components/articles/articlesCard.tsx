@@ -48,17 +48,17 @@ const StyledCard = styled(Card)`
 	max-width: 308px;
 	width: 100%;
 	box-shadow: none;
-	border: 1px solid #dde1e6;
+	border: 1px solid ${({ theme }) => theme.palette.border.light};
 	border-radius: 8px;
 `
 
 const Title = styled(Typography)`
 	font-size: 20px;
-	margin-top: 24px;
+	margin-top: ${({ theme }) => theme.spacing(2)};
 `
 
 const Content = styled(Typography)`
-	margin: 16px 0 46px 0;
+	margin: ${({ theme }) => theme.spacing(2, 0, 5.75, 0)};
 `
 
 const StyledLink = styled(Link)`
@@ -69,6 +69,6 @@ const StyledLink = styled(Link)`
 
 const MoreInfo = styled(Typography)`
 	color: ${({ theme }) => theme.palette.secondary.main};
-	margin-right: 13px;
+	margin-right: ${({ theme }) => theme.spacing(1.625)};
 	font-size: 20;
 `
