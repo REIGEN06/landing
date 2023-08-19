@@ -23,7 +23,7 @@ const StyledStack = styled('section')`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 80px 0;
+	padding: ${({ theme }) => theme.spacing(10, 0)};
 	position: relative;
 `
 
@@ -42,10 +42,10 @@ const PositionedIconRight = styled(DotsIcon)`
 const Subtitle = styled(Typography)`
 	color: ${({ theme }) => theme.palette.subtitle.main};
 	font-size: 20px;
-	margin-bottom: 8px;
+	margin-bottom: ${({ theme }) => theme.spacing(1)};
 `
 
 const Title = styled(Typography)`
 	font-size: 42px;
-	margin-bottom: 64px;
+	margin-bottom: ${({ theme }) => theme.spacing(8)};
 `

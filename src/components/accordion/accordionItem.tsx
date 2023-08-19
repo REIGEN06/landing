@@ -32,11 +32,11 @@ export default function AccordionItem({ title, content }: AccordionItemProps) {
 
 const AccordionContainer = styled(ListItem)`
 	display: block;
-	padding: 11px 16px;
+	padding: ${({ theme }) => theme.spacing(1.375, 2)};
 	background-color: ${({ theme }) => theme.palette.primary.main};
 	border: 1px solid ${({ theme }) => theme.palette.border.main};
 	border-radius: 8px;
-	margin-bottom: 16px;
+	margin-bottom: ${({ theme }) => theme.spacing(2)};
 `
 
 const Summary = styled('div')`
