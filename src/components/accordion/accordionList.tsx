@@ -38,7 +38,7 @@ export default function AccordionList() {
 	return (
 		<StyledList>
 			{accordions.map((accordion) => (
-				<AccordionItem {...accordion} />
+				<AccordionItem key={accordion.title} {...accordion} />
 			))}
 		</StyledList>
 	)

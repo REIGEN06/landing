@@ -4,10 +4,12 @@ declare module '@mui/material/styles' {
 	interface Palette {
 		border: Palette['primary']
 		card: Palette['primary']
+		subtitle: Palette['primary']
 	}
 	interface PaletteOptions {
 		border?: PaletteOptions['primary']
 		card?: PaletteOptions['primary']
+		subtitle?: PaletteOptions['primary']
 	}
 	interface TypographyVariants {
 		regular: React.CSSProperties
@@ -46,6 +48,9 @@ let theme = createTheme({
 		},
 		card: {
 			main: '#697077',
+		},
+		subtitle: {
+			main: '#001d6c',
 		},
 	},
 	typography: {

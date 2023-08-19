@@ -1,4 +1,4 @@
-import { Stack, Typography, styled } from '@mui/material'
+import { Typography, styled } from '@mui/material'
 import React from 'react'
 import AccordionList from './accordionList'
 import DotsIcon from '../../assets/icons/dots.svg'
@@ -16,7 +16,10 @@ export default function Accordion() {
 }
 
 const StyledStack = styled('section')`
-	background: linear-gradient(rgb(103, 195, 243), rgb(90, 152, 242));
+	background: linear-gradient(
+		${({ theme }) => theme.palette.secondary.light},
+		${({ theme }) => theme.palette.secondary.dark}
+	);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -37,7 +40,7 @@ const PositionedIconRight = styled(DotsIcon)`
 `
 
 const Subtitle = styled(Typography)`
-	color: #001d6c;
+	color: ${({ theme }) => theme.palette.subtitle.main};
 	font-size: 20px;
 	margin-bottom: 8px;
 `
