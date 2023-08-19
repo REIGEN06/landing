@@ -1,7 +1,8 @@
+import Accordion from '@/components/accordion/accordion'
 import React from 'react'
 
 const Landing = () => {
-	return <>Land</>
+	return <Accordion />
 }
 
 export default Landing
