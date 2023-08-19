@@ -44,5 +44,5 @@ const Card = styled(Box)`
 	flex-direction: column;
 	justify-content: flex-start;
 	max-width: 240px;
-	padding: 0 16px 16px 16px;
+	padding: ${({ theme }) => theme.spacing(0, 2, 2, 2)};
 `

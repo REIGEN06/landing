@@ -50,7 +50,7 @@ export default function About() {
 
 const Title = styled(Typography)`
 	font-size: 42px;
-	margin-bottom: 16px;
+	margin-bottom: ${({ theme }) => theme.spacing(2)};
 
 	@media (max-width: 1200px) {
 		font-size: 36px;
@@ -61,7 +61,7 @@ const Info = styled('div')`
 	max-width: 384px;
 
 	@media (max-width: 1330px) {
-		margin-bottom: 50px;
+		margin-bottom: ${({ theme }) => theme.spacing(6.25)};
 		max-width: 800px;
 	}
 `
@@ -69,7 +69,7 @@ const Info = styled('div')`
 const FlexibleStack = styled('section')`
 	display: flex;
 	justify-content: space-between;
-	padding: 80px 0;
+	padding: ${({ theme }) => theme.spacing(10, 0)};
 
 	@media (max-width: 1330px) {
 		flex-direction: column;
