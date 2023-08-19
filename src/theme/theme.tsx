@@ -31,7 +31,8 @@ let theme = createTheme({
 	palette: {
 		mode: 'light',
 		primary: {
-			main: '#ffffff',
+			main: '#000000',
+			light: '#ffffff',
 			dark: '#f2f4f8',
 		},
 		secondary: {
@@ -47,23 +48,24 @@ let theme = createTheme({
 		fontFamily: 'Roboto, sans-serif',
 		body1: {
 			fontWeight: 400,
+			lineHeight: 1.4,
 		},
 		regular: {
 			fontWeight: 400,
 			fontFamily: 'Roboto, sans-serif',
-			lineHeight: 1.5,
+			lineHeight: 1.4,
 			fontSize: '1rem',
 		},
 		medium: {
 			fontWeight: 500,
 			fontFamily: 'Roboto, sans-serif',
-			lineHeight: 1.5,
+			lineHeight: 1,
 			fontSize: '1rem',
 		},
 		bold: {
 			fontWeight: 700,
 			fontFamily: 'Roboto, sans-serif',
-			lineHeight: 1.5,
+			lineHeight: 1,
 			fontSize: '1rem',
 		},
 	},
