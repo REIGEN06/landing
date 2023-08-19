@@ -43,7 +43,7 @@ export default function CategoriesList({ checked }: { checked: boolean }) {
 const StyledStack = styled(Stack)`
 	display: grid;
 	grid-template-columns: repeat(3, minmax(200px, 410px));
-	column-gap: 24px;
+	column-gap: ${({ theme }) => theme.spacing(3)};
 
 	@media (max-width: 1100px) {
 		grid-template-columns: repeat(2, minmax(200px, 410px));

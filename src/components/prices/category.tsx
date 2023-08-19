@@ -107,7 +107,7 @@ export default function Category({
 			>
 				{description}
 			</Typography>
-			<Price variant="bold" checked={!checked} sx={{ marginBottom: '8px' }}>
+			<Price variant="bold" checked={!checked}>
 				${priceForAMonth}
 			</Price>
 			{checked === false ? (
@@ -140,42 +140,47 @@ const StyledStack = styled(Stack)`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 48px 24px;
+	padding: ${({ theme }) => theme.spacing(6, 3)};
 	border-radius: 8px;
-	border: 1px solid #dde1e6;
+	border: 1px solid ${({ theme }) => theme.palette.border.light};
 	position: relative;
 `
 
-const Price = styled(Typography)<PriceTypographyProps>(({ checked }) => ({
-	fontSize: '54px',
-	color: checked ? '#A2A9B0' : '#21272A',
-	textDecoration: checked ? 'line-through' : 'none',
-}))
+const Price = styled(Typography)<PriceTypographyProps>(
+	({ theme, checked }) => ({
+		fontSize: '54px',
+		color: checked ? theme.palette.price.light : theme.palette.price.dark,
+		textDecoration: checked ? 'line-through' : 'none',
+		textDecorationThickness: '3px',
+		marginBottom: theme.spacing(1),
+	})
+)
 
 const Advantages = styled(Stack)`
 	display: flex;
 	flex-direction: column;
-	margin-top: 32px;
-	row-gap: 8px;
+	margin-top: ${({ theme }) => theme.spacing(4)};
+	row-gap: ${({ theme }) => theme.spacing(1)};
 `
 const Advantage = styled('div')`
 	display: flex;
 	align-items: center;
-	column-gap: 8px;
+	column-gap: ${({ theme }) => theme.spacing(1)};
 `
 
 const CategoryBadge = styled('div')`
-	padding: 2px 10px 2px 10px;
+	padding: ${({ theme }) => theme.spacing(0.25, 1.25)};
 	border-radius: 10px;
 	background-color: ${({ theme }) => theme.palette.primary.dark};
-	text-align: center;
-	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-size: 12px;
 	font-weight: 500;
 	line-height: 1.4;
 	font-family: 'Roboto', sans-serif;
 	position: absolute;
-	top: -10.4px;
+	top: -10px;
 	left: 50%;
 	transform: translateX(-50%);
 `

@@ -44,18 +44,18 @@ const Section = styled('section')`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 80px 0;
+	padding: ${({ theme }) => theme.spacing(10, 0)};
 `
 
 const Subtitle = styled(Typography)`
-	color: #001d6c;
+	color: ${({ theme }) => theme.palette.subtitle.main};
 	font-size: 20px;
-	margin-bottom: 8px;
+	margin-bottom: ${({ theme }) => theme.spacing(1)};
 `
 
 const Title = styled(Typography)`
 	font-size: 42px;
-	margin-bottom: 64px;
+	margin-bottom: ${({ theme }) => theme.spacing(8)};
 	text-align: center;
 
 	@media (max-width: 1300px) {
@@ -70,24 +70,25 @@ const Title = styled(Typography)`
 const StyledStack = styled(Stack)`
 	display: flex;
 	align-items: center;
-	column-gap: 16px;
+	column-gap: ${({ theme }) => theme.spacing(2)};
 	position: relative;
-	margin-bottom: 52px;
+	margin-bottom: ${({ theme }) => theme.spacing(6.5)};
 `
 
 const Stock = styled('div')`
-	padding: 2px 10px 2px 10px;
+	padding: ${({ theme }) => theme.spacing(0.25, 1.25)};
 	border-radius: 10px;
 	background-color: ${({ theme }) => theme.palette.primary.dark};
-	text-align: center;
-	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-size: 12px;
 	font-weight: 500;
 	line-height: 1.4;
 	font-family: 'Roboto', sans-serif;
 	position: absolute;
 	top: -22px;
-	left: -29%;
+	left: -40px;
 `
 
 const StyledSwitch = styled(Switch)`
@@ -104,18 +105,17 @@ const StyledSwitch = styled(Switch)`
 		}
 	}
 	& .MuiSwitch-switchBase {
-		padding: 2px;
+		padding: ${({ theme }) => theme.spacing(0.25)};
 		&.Mui-checked {
 			transform: translateX(15px);
-			color: #fff;
+			color: ${({ theme }) => theme.palette.primary.main};
 			& + .MuiSwitch-track {
 				opacity: 1;
-				background-color: rgba(0, 0, 0, 0.25);
+				background-color: ${({ theme }) => theme.palette.switchField.main};
 			}
 		}
 	}
 	& .MuiSwitch-thumb {
-		box-shadow: 0 2px 4px 0 rgb(0 35 11 / 20%);
 		width: 12px;
 		height: 12px;
 		border-radius: 6px;
